@@ -1,0 +1,25 @@
+<div>
+    {% if section.settings.image %}
+        {{ section.settings.image | image_url: width: 1440 | image_tag: width: nil }}
+    {% else %}
+        {{ 'collection-2' | placeholder_svg_tag }}
+    {% endif %}    
+</div>
+{% schema %}
+    {
+        "name": "Image Banner",
+        "class": "image-banner",
+        "settings": [
+            {
+                "type":"image_picker",
+                "id":"image",
+                "label":"Choose image"
+            }
+        ],
+        "presets":[
+            {
+                "name":"Image Banner"
+            }
+        ]
+    }
+{% endschema %}

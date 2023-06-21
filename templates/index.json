@@ -1,13 +1,13 @@
 {
   "sections": {
-    "main": {
-      "type": "hello-world",
+    "ad6b57db-f2b7-4afa-aa1b-5ceeaf4ccff4": {
+      "type": "banner",
       "settings": {
-        "heading": "Welcome to Adastra ✨ with Alpine...."
+        "image": "shopify:\/\/shop_images\/entrepreneurs-journal.jpg"
       }
     }
   },
   "order": [
-    "main"
+    "ad6b57db-f2b7-4afa-aa1b-5ceeaf4ccff4"
   ]
 }
