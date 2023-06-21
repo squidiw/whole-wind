@@ -2,10 +2,11 @@
   "name": "with-alpine",
   "version": "0.0.0",
   "scripts": {
-    "dev": "adastra dev -s myalpinedevstore.myshopify.com  --theme-editor-sync",
+    "dev": "adastra dev -s myalpinedevstore.myshopify.com  --theme-editor-sync & npm run tailwind-build ",
     "build": "adastra build",
     "preview": "adastra preview",
-    "check": "adastra check"
+    "check": "adastra check",
+    "tailwind-build": "npx tailwindcss -i ./src/entrypoints/base.css -o ./src/entrypoints/tailwind.css --watch"
   },
   "dependencies": {
     "alpinejs": "^3.11.1"
@@ -13,6 +14,7 @@
   "devDependencies": {
     "adastra-cli": "latest",
     "adastra-plugin": "latest",
+    "tailwindcss": "^3.3.2",
     "vite": "^4.1.4"
   }
 }

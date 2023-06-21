@@ -37,9 +37,12 @@
     <!-- shopify/apps -->
     {{ content_for_header }}
 
+    {%- comment -%} Tailwind CSS {%- endcomment -%}
+    <link rel="preload" href="{{ 'tailwind.css' | asset_url }}" as="style">
     {% liquid
       # Always add entrypoint below content_for_header
       render 'adastra' with 'base.css'
+      render 'adastra' with 'tailwind.css'
       render 'adastra' with 'index.js'
     %}
   </head>
