@@ -3,9 +3,11 @@
     "main": {
       "type": "hello-world",
       "settings": {
-        "heading": "Welcome to Adastra ✨ with Alpine."
+        "heading": "Welcome to Adastra ✨ with Alpine...."
       }
     }
   },
-  "order": ["main"]
+  "order": [
+    "main"
+  ]
 }

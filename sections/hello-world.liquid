@@ -3,7 +3,7 @@
     <h1>{{ section.settings.heading }}</h1>
   {% endif %}
 
-  <div x-data="{ count: 0 }">
+  <div x-data="{ count: 0, text: 'text here' }">
     <button @click="count++">
       Counter <output x-text="count">0</output>
     </button>

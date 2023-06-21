@@ -2,7 +2,7 @@
   "name": "with-alpine",
   "version": "0.0.0",
   "scripts": {
-    "dev": "adastra dev -s myalpinedevstore.myshopify.com",
+    "dev": "adastra dev -s myalpinedevstore.myshopify.com  --theme-editor-sync",
     "build": "adastra build",
     "preview": "adastra preview",
     "check": "adastra check"
