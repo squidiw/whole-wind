@@ -24,6 +24,10 @@ body {
   min-height: 100vh;
 }
 
+div:empty{
+  display: none;
+}
+
 a {
   color: hsla(var(--color-accent) / 1);
   text-decoration: none;

@@ -3,14 +3,16 @@
         {% if section.settings.image %}
             {{ section.settings.image | image_url: width: 1440 | image_tag: width: nil }}
         {% else %}
-            {{ 'collection-2' | placeholder_svg_tag }}
+            {{ 'lifestyle-2' | placeholder_svg_tag }}
         {% endif %}
     </span>        
-    <span class="w-full flex flex-col gap-3 text-white md:absolute md:w-fit md:bg-black md:p-5 md:top-2/4 md:transform md:-translate-y-2/4 ">
-        <p class="lg:text-6xl">{{ section.settings.title }}</p>
-        <p class="lg:text-4xl">{{ section.settings.subtitle }}</p>
-        <a href="{{ section.settings.btn_url }}" class="btn border-gray-300">{{ section.settings.btn_text }}</a>
-    </span>
+    <div class="flex flex-col gap-3 md:absolute md:top-2/4 md:transform md:-translate-y-2/4 ">
+        <div class="inline-block text-white md:bg-black md:p-5">
+            <p class="lg:text-6xl">{{ section.settings.title }}</p>
+            <p class="lg:text-4xl">{{ section.settings.subtitle }}</p>
+            <a href="{{ section.settings.btn_url }}" class="btn border-gray-300">{{ section.settings.btn_text }}</a>
+        </div>
+    </div>    
 </div>
 {% schema %}
     {

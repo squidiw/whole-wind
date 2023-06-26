@@ -1,0 +1,59 @@
+<section class="splide" aria-label="Annoucement bar" data-splide='{"type":"loop","autoplay":"true","arrows":"false","pagination":"false"}'>
+    <div class="splide__track">
+          <div class="splide__list">
+            {%- for block in section.blocks -%}
+              <div class="splide__slide block text-center p-3">
+                {{- block.settings.announcement -}}
+              </div>
+            {%- endfor -%}  
+          </div>
+    </div>
+</section>
+<style>
+.splide__slide{
+    background-color: {{ section.settings.bg_color }};
+    color: {{ section.settings.text_color }}
+}
+
+.announcement-bar .splide__pagination,
+.announcement-bar .splide__arrows{
+    display: none;
+}
+</style>
+
+{% schema %}
+    {
+        "name": "Announcement bar",
+        "class": "announcement-bar",
+        "settings": [
+            {
+                "type":"color",
+                "id":"bg_color",
+                "label":"Background color"
+            },
+            {
+                "type":"color",
+                "id":"text_color",
+                "label":"Text color"
+            }
+        ],
+        "blocks": [
+            {
+                "type": "announcement",
+                "name": "text",
+                "settings": [
+                    {
+                        "type":"richtext",
+                        "id":"announcement",
+                        "label":"Announcement text"
+                    }
+                ]
+            }
+        ],
+        "presets":[
+            {
+                "name": "Announcement bar"
+            }
+        ]
+    }
+{% endschema %}
