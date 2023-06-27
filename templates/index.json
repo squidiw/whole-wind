@@ -1,50 +1,13 @@
 {
   "sections": {
-    "bac965b4-8d7f-48b2-b72e-def030931a6d": {
-      "type": "announcement-bar",
-      "blocks": {
-        "db241a69-a5d1-4434-a060-9661532cc813": {
-          "type": "announcement",
-          "settings": {
-            "announcement": "<p>First announcement bar<\/p>"
-          }
-        },
-        "b9b5aae8-13dd-46ac-b224-c93419bf8a7e": {
-          "type": "announcement",
-          "settings": {
-            "announcement": "<p>Second announcement bar<\/p>"
-          }
-        },
-        "1dd392ff-d761-428c-8aba-d7bda071569f": {
-          "type": "announcement",
-          "settings": {
-            "announcement": "<p>Third announcement bar<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "db241a69-a5d1-4434-a060-9661532cc813",
-        "b9b5aae8-13dd-46ac-b224-c93419bf8a7e",
-        "1dd392ff-d761-428c-8aba-d7bda071569f"
-      ],
+    "main": {
+      "type": "hello-world",
       "settings": {
-        "bg_color": "#bebebe",
-        "text_color": "#000000"
-      }
-    },
-    "ad6b57db-f2b7-4afa-aa1b-5ceeaf4ccff4": {
-      "type": "banner",
-      "settings": {
-        "title": "Browse amazing products",
-        "subtitle": "Some other interesting details about your store",
-        "btn_text": "Browse all",
-        "btn_url": "\/",
-        "image": "shopify:\/\/shop_images\/entrepreneurs-journal.jpg"
+        "heading": "Welcome to Adastra ✨ with Alpine...."
       }
     }
   },
   "order": [
-    "bac965b4-8d7f-48b2-b72e-def030931a6d",
-    "ad6b57db-f2b7-4afa-aa1b-5ceeaf4ccff4"
+    "main"
   ]
 }
