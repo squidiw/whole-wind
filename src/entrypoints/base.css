@@ -24,6 +24,10 @@ body {
   min-height: 100vh;
 }
 
+main{
+  height: 100%;
+}
+
 div:empty{
   display: none;
 }

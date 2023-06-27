@@ -6,7 +6,7 @@
     "build": "adastra build",
     "preview": "adastra preview",
     "check": "adastra check",
-    "tailwind-build": "npx tailwindcss -i ./src/entrypoints/base.css -o ./src/entrypoints/tailwind.css --watch"
+    "tailwind": "npx tailwindcss -i ./src/entrypoints/base.css -o ./src/entrypoints/tailwind.css --watch"
   },
   "dependencies": {
     "@splidejs/splide": "^4.1.4",

@@ -38,7 +38,8 @@
         "title": "Browse amazing products",
         "subtitle": "Some other interesting details about your store",
         "btn_text": "Browse all",
-        "btn_url": "\/"
+        "btn_url": "\/",
+        "image": "shopify:\/\/shop_images\/entrepreneurs-journal.jpg"
       }
     }
   },
