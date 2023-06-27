@@ -1,0 +1,15 @@
+{% if image %}
+    {% unless class %}
+      {% assign class = 'w-full h-auto' %}
+    {% endunless %}
+    <picture>
+      <source srcset="{% if mobile_image %}{{ mobile_image | img_url: '640x' }} 1x,{{ mobile_image | img_url: '1280x' }} 2x,{% else %}{{ image | img_url: '640x' }} 1x,{{ image | img_url: '1280x' }} 2x{% endif %}" media="(max-width: 560px) ">
+      <source srcset="{{ image | img_url: '1280x' }} 1x, {{ image | img_url: '2048x' }} 2x" media="(max-width: 1024px) ">
+      <source srcset="{{ image | img_url: '2400x' }} 1x, {{ image | img_url: '4800x' }} 2x" media="(max-width: 2400px) ">
+      <img class="{{ class }}" src="{{ image | img_url: 'master' }}" srcset="{{ image | img_url: '1280x' }} 1x, {{ image | img_url: '2048x' }} 2x" alt="{% unless alt %}{{ image.alt | escape }}{% else %}{{ alt }}{% endunless %}" loading="lazy">
+    </picture>
+    {% else %}
+      <p class="text-red-800">
+        Error: Image is not defined
+      </p>
+    {% endif %}
