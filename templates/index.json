@@ -7,6 +7,7 @@
     },
     "3f70915c-2f12-49e1-866f-8dfd8de4314e": {
       "type": "announcement-bar",
+      "disabled": true,
       "blocks": {
         "12e3f97b-d902-43f2-81e8-6c5cffcc8a76": {
           "type": "announcement",
@@ -39,6 +40,7 @@
     },
     "cd2d7b1d-fb8e-460b-99d9-5162a7fd6ad1": {
       "type": "banner",
+      "disabled": true,
       "settings": {
         "title": "Browse amazing products",
         "subtitle": "Some other interesting details about your store",
@@ -48,6 +50,7 @@
     },
     "d5703e4a-d22c-48da-a711-a7ea3736b95d": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "title": "featured collection",
         "collection": "apparel"

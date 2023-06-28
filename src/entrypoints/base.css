@@ -16,11 +16,9 @@
   -webkit-text-size-adjust: 100%;
 }
 
-body {
+body,*,*::before,*::after {
   margin: 0;
   padding: 0;
-  display: grid;
-  place-items: center;
 }
 
 div:empty{
@@ -45,9 +43,9 @@ h1 {
   line-height: 1.1;
 }
 
-.btn{
+/* .btn{
   @apply bg-black text-white border border-gray-300 p-4 inline-block w-fit
-}
+} */
 
 button {
   border-radius: 0.5rem;
