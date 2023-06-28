@@ -48,14 +48,19 @@
       render 'adastra' with 'index.js'
     %}
 
-    <link rel="preload" href="{{ 'base-38589bde.css' | asset_url }}" as="style">
-    <link rel="preload" href="{{ 'index-84bd9784.js' | asset_url }}" as="script">
-    <link rel="preload" href="{{ 'tailwind-1b7f5435.css' | asset_url }}" as="style">
+
+    {% comment %} LINK TO PRELOAD PRODUCTION ASSETS {% endcomment %}
+      {{ 'base-38589bde.css' | asset_url | stylesheet_tag: preload: true }}
+      {{ 'tailwind-1b7f5435.css' | asset_url | stylesheet_tag: preload: true }}
+      {{ 'index-84bd9784.js' | asset_url | preload_tag: as: 'script' }}
+    {% comment %} END PRELOAD {% endcomment %}
 
 
-    {{ 'base-38589bde.css' | asset_url | stylesheet_tag }}
-    {{ 'tailwind-1b7f5435.css' | asset_url | stylesheet_tag }}
-    {{ 'index-84bd9784.js' | asset_url | script_tag }}
+    {% comment %} LINK TO PRODUCTION ASSETS  {% endcomment %}
+      {{ 'base-38589bde.css' | asset_url | stylesheet_tag }}
+      {{ 'tailwind-1b7f5435.css' | asset_url | stylesheet_tag }}
+      <script src="{{ 'index-84bd9784.js' | asset_url }}" async ></script>
+    {% comment %} END  {% endcomment %}
   </head>
   <body>
     <main

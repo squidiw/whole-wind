@@ -1,5 +1,10 @@
 {
   "sections": {
+    "6379fe93-21b4-420b-a0f0-ac0de936436e": {
+      "type": "header",
+      "settings": {
+      }
+    },
     "3f70915c-2f12-49e1-866f-8dfd8de4314e": {
       "type": "announcement-bar",
       "blocks": {
@@ -28,7 +33,7 @@
         "00d41771-427b-4aca-9b06-e4eefbee4f9d"
       ],
       "settings": {
-        "bg_color": "#C5FC81",
+        "bg_color": "#c5fc81",
         "text_color": ""
       }
     },
@@ -44,11 +49,13 @@
     "d5703e4a-d22c-48da-a711-a7ea3736b95d": {
       "type": "featured-collection",
       "settings": {
+        "title": "featured collection",
         "collection": "apparel"
       }
     }
   },
   "order": [
+    "6379fe93-21b4-420b-a0f0-ac0de936436e",
     "3f70915c-2f12-49e1-866f-8dfd8de4314e",
     "cd2d7b1d-fb8e-460b-99d9-5162a7fd6ad1",
     "d5703e4a-d22c-48da-a711-a7ea3736b95d"
