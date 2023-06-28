@@ -1,21 +1,21 @@
 {
   "sections": {
-    "337a23e3-c64b-4765-b472-9d1d78cbcc07": {
+    "3f70915c-2f12-49e1-866f-8dfd8de4314e": {
       "type": "announcement-bar",
       "blocks": {
-        "cc1a1258-fe56-4b3a-af5d-f04891a1f2fa": {
+        "12e3f97b-d902-43f2-81e8-6c5cffcc8a76": {
           "type": "announcement",
           "settings": {
             "announcement": "<p>First announcement bar<\/p>"
           }
         },
-        "3289f20c-4eea-4e8c-b30e-c8696e1da9df": {
+        "21841747-39e8-4aeb-9b20-0b1228f071bd": {
           "type": "announcement",
           "settings": {
             "announcement": "<p>Second announcement bar<\/p>"
           }
         },
-        "2c4d3211-3312-442f-a33e-e4a57b9082cf": {
+        "00d41771-427b-4aca-9b06-e4eefbee4f9d": {
           "type": "announcement",
           "settings": {
             "announcement": "<p>Third announcement bar<\/p>"
@@ -23,16 +23,16 @@
         }
       },
       "block_order": [
-        "cc1a1258-fe56-4b3a-af5d-f04891a1f2fa",
-        "3289f20c-4eea-4e8c-b30e-c8696e1da9df",
-        "2c4d3211-3312-442f-a33e-e4a57b9082cf"
+        "12e3f97b-d902-43f2-81e8-6c5cffcc8a76",
+        "21841747-39e8-4aeb-9b20-0b1228f071bd",
+        "00d41771-427b-4aca-9b06-e4eefbee4f9d"
       ],
       "settings": {
-        "bg_color": "",
+        "bg_color": "#C5FC81",
         "text_color": ""
       }
     },
-    "7f213eb5-5c96-4bce-a8e8-eaca15321ae4": {
+    "cd2d7b1d-fb8e-460b-99d9-5162a7fd6ad1": {
       "type": "banner",
       "settings": {
         "title": "Browse amazing products",
@@ -40,10 +40,17 @@
         "btn_text": "Browse all",
         "btn_url": "\/"
       }
+    },
+    "d5703e4a-d22c-48da-a711-a7ea3736b95d": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "apparel"
+      }
     }
   },
   "order": [
-    "337a23e3-c64b-4765-b472-9d1d78cbcc07",
-    "7f213eb5-5c96-4bce-a8e8-eaca15321ae4"
+    "3f70915c-2f12-49e1-866f-8dfd8de4314e",
+    "cd2d7b1d-fb8e-460b-99d9-5162a7fd6ad1",
+    "d5703e4a-d22c-48da-a711-a7ea3736b95d"
   ]
 }

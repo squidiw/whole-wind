@@ -47,6 +47,15 @@
       render 'adastra' with 'tailwind.css'
       render 'adastra' with 'index.js'
     %}
+
+    <link rel="preload" href="{{ 'base-38589bde.css' | asset_url }}" as="style">
+    <link rel="preload" href="{{ 'index-84bd9784.js' | asset_url }}" as="script">
+    <link rel="preload" href="{{ 'tailwind-1b7f5435.css' | asset_url }}" as="style">
+
+
+    {{ 'base-38589bde.css' | asset_url | stylesheet_tag }}
+    {{ 'tailwind-1b7f5435.css' | asset_url | stylesheet_tag }}
+    {{ 'index-84bd9784.js' | asset_url | script_tag }}
   </head>
   <body>
     <main

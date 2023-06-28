@@ -1,0 +1,7 @@
+<div class="splide__slide">
+    <a class="absolute top-0 left-0 right-0 bottom-0 z-10" href="{{ product.url }}"></a>
+    <span class="block">
+        {{ product.featured_image | image_url: width: 250 | image_tag: width: nil }}
+    </span>
+    <p>{{ product.title }}</p>
+</div>

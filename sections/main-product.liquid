@@ -1,0 +1,16 @@
+{% for variant in product.variants %}
+    <div class="w-full>
+      {% for media in product.media %}
+        {% case media.media_type %}
+          {% when 'image' %}    
+            {% render 'component-image', image: media, class: 'h-auto object-contain w-full' %}
+          {% when 'video' %}
+            <div class="min-h-[100px] min-w-[100px]" data-media-id="{{ media.id }}">
+              {{ media | video_tag: autoplay: true, loop: true, muted: true, controls: true, class: "h-full w-full object-cover" }}
+            </div>
+          {% else %}
+          {{ media | media_tag }}
+        {% endcase %}
+      {% endfor %}
+    </div>  
+{% endfor %}
