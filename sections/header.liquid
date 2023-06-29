@@ -1,13 +1,18 @@
 <header>
-<nav class="flex justify-between lg:hidden">
-    <div>
-        {% render 'icon-hamburger' %}
-    </div>
-    <div class="">
-        {{ shop.name }}
-    </div>
-    <div>0</div>
-</nav>
+    <nav x-data="{ openHamburger: false }" class="flex justify-between lg:hidden">
+        <div>
+            <span @click="openHamburger = true ">
+                {% render 'icon-hamburger' %}
+            </span>
+            <div x-show="openHamburger">
+                <h1>HAMBURGER OPENED </h1>
+            </div>
+        </div>
+        <div class="">
+            {{ shop.name }}
+        </div>
+        <div>0</div>
+    </nav>
 </header>
 {% schema %}
     {
