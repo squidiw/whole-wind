@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+[x-cloak]{
+  display: none;
+}
+
 :root {
   font-family: var(--font-body-family);
   line-height: 1.5;
@@ -20,8 +24,9 @@ body,*,*::before,*::after {
   margin: 0;
   padding: 0;
 }
-[x-cloak]{
-  display: none;
+
+.mobile-navigation__list+li{
+  margin-top: 10px;
 }
 
 div:empty{

@@ -1,16 +1,33 @@
-<header>
+<header class="bg-white">
     <div x-data="{ openHamburger: false }" class="relative flex justify-between lg:hidden">
         <div>
             <span @click="openHamburger = true ">
                 {% render 'icon-hamburger' %}
             </span>
             <div x-transition x-cloak x-show="openHamburger"
-                class="absolute top-0 left-0 right-0 bottom-0 z-10">
-                <span @click="openHamburger = false " class="block"> {% render 'icon-close' %} </span>
-                <nav>
-                    {% for link in section.settings.menu.links %}
-                        <a href="{{ link.url }}">{{ link.title }}</a>
-                    {% endfor %}
+                class="absolute top-0 w-full z-10 bg-white px-6 py-5">
+                <button @click="openHamburger = false " class="block w-fit bg-[#f2f3f3] rounded-none p-2 m-0 mb-6"> {% render 'icon-close' %} </button>
+                <nav class="mobile-navigation flex flex-col gap-2">
+                    <ul class="mobile-navigation__list">
+                        {% for link in section.settings.menu.links %}
+                            {% if link.links != blank %}
+                                <li x-data="{ open_dropdown: false }"
+                                    @click="open_dropdown = !open_dropdown"
+                                    class="relative mobile-navigation__list-item mobile-navigation__list--has-dd">
+                                    <a>{{ link.title }}</a>
+                                    <ul class="navigation-mobile__dropdown" x-show="open_dropdown">
+                                        {% for childlink in link.links %}
+                                            <li class="navigation-mobile__dropdown__list-item">{{ childlink.title }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </li>    
+                                {% else %}
+                                <li class="relative mobile-navigation__list">
+                                    <a href="{{ link.url }}">{{ link.title }}</a>
+                                </li>   
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
                 </nav>
             </div>
         </div>
