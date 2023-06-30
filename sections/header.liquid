@@ -1,6 +1,6 @@
 <header class="bg-white">
-    <div x-data="{ openHamburger: false }" class="relative flex justify-between lg:hidden">
-        <div>
+    <div x-data="{ openHamburger: false }" class="relative flex justify-between">
+        <div class="mobile-menu lg:hidden">
             <span @click="openHamburger = true ">
                 {% render 'icon-hamburger' %}
             </span>
@@ -14,8 +14,11 @@
                                 <li x-data="{ open_dropdown: false }"
                                     @click="open_dropdown = !open_dropdown"
                                     class="relative mobile-navigation__list-item mobile-navigation__list--has-dd">
-                                    <a>{{ link.title }}</a>
-                                    <ul class="navigation-mobile__dropdown" x-show="open_dropdown">
+                                    <a class="flex items-center justify-between">
+                                        <span>{{ link.title }}</span>
+                                        <span :class="{ 'rotate-180' : open_dropdown }"> {% render 'icon-chevron-down', class: 'w-4 h-4' %}</span>
+                                    </a>
+                                    <ul class="navigation-mobile__dropdown" x-transition x-show="open_dropdown">
                                         {% for childlink in link.links %}
                                             <li class="navigation-mobile__dropdown__list-item">{{ childlink.title }}</li>
                                         {% endfor %}
@@ -27,11 +30,42 @@
                                 </li>   
                             {% endif %}
                         {% endfor %}
+                        <li class="mobile-navigation__list-item">my account</li>
+                        <div class="flex justify-between gap-5 mt-5">
+                            <a href="/account/register" class="btn bg-black text-white">join</a>
+                    
+                            <a href="/account" class="btn border border-black">sign in</a>
+                          </div>
                     </ul>
                 </nav>
             </div>
         </div>
-        <div class="">
+        <div class="desktop-menu hidden lg:!flex">
+            <nav class="mobile-navigation flex flex-col gap-2">
+                <ul class="mobile-navigation__list">
+                    {% for link in section.settings.menu.links %}
+                        {% if link.links != blank %}
+                            <li
+                                class="relative">
+                                <a class="flex items-center justify-between">
+                                    <span>{{ link.title }}</span>
+                                </a>
+                                <ul class="">
+                                    {% for childlink in link.links %}
+                                        <li class="">{{ childlink.title }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </li>    
+                            {% else %}
+                            <li class="relative">
+                                <a href="{{ link.url }}">{{ link.title }}</a>
+                            </li>   
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </nav>
+        </div>
+        <div>
             {{ shop.name }}
         </div>
         <div class="flex items-center gap-1">
