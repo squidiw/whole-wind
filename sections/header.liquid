@@ -1,24 +1,39 @@
 <header>
-    <nav x-data="{ openHamburger: false }" class="flex justify-between lg:hidden">
+    <div x-data="{ openHamburger: false }" class="relative flex justify-between lg:hidden">
         <div>
             <span @click="openHamburger = true ">
                 {% render 'icon-hamburger' %}
             </span>
-            <div x-show="openHamburger">
-                <h1>HAMBURGER OPENED </h1>
+            <div x-transition x-cloak x-show="openHamburger"
+                class="absolute top-0 left-0 right-0 bottom-0 z-10">
+                <span @click="openHamburger = false " class="block"> {% render 'icon-close' %} </span>
+                <nav>
+                    {% for link in section.settings.menu.links %}
+                        <a href="{{ link.url }}">{{ link.title }}</a>
+                    {% endfor %}
+                </nav>
             </div>
         </div>
         <div class="">
             {{ shop.name }}
         </div>
-        <div>0</div>
-    </nav>
+        <div class="flex items-center gap-1">
+            <span> {% render 'icon-shopping-bag', class: 'h4 w-4' %} </span>
+            <span>({{ cart.item_count }})</span>
+        </div>
+    </div>
 </header>
 {% schema %}
     {
         "name": "header",
         "class": "header",
-        "settings": [],
+        "settings": [
+            {
+                "type":"link_list",
+                "id":"menu",
+                "label":"Menu"
+            }
+        ],
         "presets":[
             {
                 "name":"Header"
