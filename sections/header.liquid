@@ -1,5 +1,5 @@
-<header class="bg-white">
-    <div x-data="{ openHamburger: false }" class="relative flex justify-between">
+<header class="bg-white xl:py-5">
+    <div x-data="{ openHamburger: false }" class="relative flex justify-between max-w-screen-2xl lg:mx-auto">
         <div class="mobile-menu lg:hidden">
             <span @click="openHamburger = true ">
                 {% render 'icon-hamburger' %}
@@ -41,20 +41,28 @@
             </div>
         </div>
         <div class="desktop-menu hidden lg:!flex">
-            <nav class="mobile-navigation flex flex-col gap-2">
-                <ul class="mobile-navigation__list">
-                    {% for link in section.settings.menu.links %}
+            <nav class="flex flex-col gap-2">
+                <ul class="flex gap-7">
+                    {% for link in section.settings.desktop_menu.links %}
                         {% if link.links != blank %}
-                            <li
-                                class="relative">
-                                <a class="flex items-center justify-between">
+                            <li x-data="{ megamenu: false }" @mouseleave="megamenu = false" @mouseover="megamenu = true"
+                                class="relative group">
+                                <a href="{{ link.url }}" class="flex items-center justify-between">
                                     <span>{{ link.title }}</span>
                                 </a>
-                                <ul class="">
-                                    {% for childlink in link.links %}
-                                        <li class="">{{ childlink.title }}</li>
-                                    {% endfor %}
-                                </ul>
+
+                                <div x-cloak 
+                                    class="absolute left-0 invisible group-hover:visible"
+                                >
+                                    <span class="h-5 inline-block"> </span>
+                                    <ul class="">
+                                        {% for childlink in link.links %}
+                                            <li class="">
+                                                <a href="{{ childlink.url }}">{{ childlink.title }}</a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
                             </li>    
                             {% else %}
                             <li class="relative">
@@ -82,8 +90,14 @@
             {
                 "type":"link_list",
                 "id":"menu",
-                "label":"Menu"
+                "label":"Mobile menu"
+            },
+            {
+                "type":"link_list",
+                "id":"desktop_menu",
+                "label":"Desktop menu"
             }
+            
         ],
         "presets":[
             {

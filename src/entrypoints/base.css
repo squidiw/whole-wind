@@ -60,8 +60,6 @@ h1 {
 
 .btn{
   align-items: center;
-  background: white;
-  color: #222;
   cursor: pointer;
   display: inline-flex;
   font-size: 14px;
