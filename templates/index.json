@@ -2,6 +2,34 @@
   "sections": {
     "6379fe93-21b4-420b-a0f0-ac0de936436e": {
       "type": "header",
+      "blocks": {
+        "f2d8fcd7-42f5-4d5a-bf94-9240689cc14b": {
+          "type": "megamenu",
+          "settings": {
+            "megamenu_title": "home",
+            "megamenu_collection": ""
+          }
+        },
+        "b185616c-a106-47c5-861e-f36ed5d9f057": {
+          "type": "megamenu",
+          "settings": {
+            "megamenu_title": "catalog",
+            "megamenu_collection": ""
+          }
+        },
+        "7620fb01-66d0-4db5-b08b-8500af9cf14c": {
+          "type": "megamenu",
+          "settings": {
+            "megamenu_title": "contact",
+            "megamenu_collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "f2d8fcd7-42f5-4d5a-bf94-9240689cc14b",
+        "b185616c-a106-47c5-861e-f36ed5d9f057",
+        "7620fb01-66d0-4db5-b08b-8500af9cf14c"
+      ],
       "settings": {
         "menu": "main-menu",
         "desktop_menu": "main-menu"
