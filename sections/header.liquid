@@ -1,5 +1,5 @@
-<header class="bg-white xl:py-5">
-    <div x-data="{ openHamburger: false }" class="relative flex justify-between max-w-screen-2xl lg:mx-auto">
+<header class="relative bg-white xl:py-5">
+    <div x-data="{ openHamburger: false }" class="w-full flex items-center justify-between max-w-screen-2xl lg:mx-auto">
         <div class="mobile-menu lg:hidden">
             <span @click="openHamburger = true ">
                 {% render 'icon-hamburger' %}
@@ -40,22 +40,22 @@
                 </nav>
             </div>
         </div>
-        <div class="desktop-menu hidden lg:!flex">
+        <div class="desktop-menu hidden lg:!flex lg:order-2">
             <nav class="flex flex-col gap-2">
                 <ul class="flex gap-7">
                     {% for link in section.settings.desktop_menu.links %}
                         {% if link.links != blank %}
                             <li x-data="{ megamenu: false }" @mouseleave="megamenu = false" @mouseover="megamenu = true"
-                                class="relative group">
+                                class="group">
                                 <a href="{{ link.url }}" class="flex items-center justify-between">
                                     <span>{{ link.title }}</span>
                                 </a>
 
                                 <div x-cloak 
-                                    class="absolute left-0 invisible group-hover:visible"
+                                    class="megamenu absolute left-0 right-0 invisible group-hover:visible bg-white"
                                 >
                                     <span class="h-5 inline-block"> </span>
-                                    <ul class="">
+                                    <ul class="max-w-screen-2xl lg:mx-auto">
                                         {% for childlink in link.links %}
                                             <li class="">
                                                 <a href="{{ childlink.url }}">{{ childlink.title }}</a>
@@ -73,10 +73,10 @@
                 </ul>
             </nav>
         </div>
-        <div>
+        <div class="lg:order-1">
             {{ shop.name }}
         </div>
-        <div class="flex items-center gap-1">
+        <div class="flex items-center gap-1 lg:order-3">
             <span> {% render 'icon-shopping-bag', class: 'h4 w-4' %} </span>
             <span>({{ cart.item_count }})</span>
         </div>
