@@ -52,30 +52,42 @@
                             <li x-data="{ megamenu: false }" @mouseleave="megamenu = false" @mouseover="megamenu = true"
                                 class="group">
                                 <a href="{{ link.url }}" class="flex items-center justify-between">
-                                    <span>{{ link.title }}</span>
+                                    {{ link.title }}
                                 </a>
 
-                                <div x-cloak 
-                                    class="megamenu absolute left-0 right-0 invisible group-hover:visible bg-white"
-                                >
+                                <div x-cloak class="megamenu absolute left-0 right-0 invisible group-hover:visible bg-white">
                                     <span class="h-5 inline-block"> </span>
-                                    <ul class="max-w-screen-2xl lg:mx-auto">
-                                        <li>
+                                    <ul class="py-8 flex gap-28 max-w-screen-2xl mx-auto">
+                                        <li class="w-[10%]">
                                             <ul>
                                                 {% for childlink in link.links %}
-                                                    <li class="">
+                                                    <li>
                                                         <a href="{{ childlink.url }}">{{ childlink.title }}</a>
                                                     </li>
                                                 {% endfor %}
                                             </ul>
                                         </li>
                                         <li>
-                                            <div class="megamenu--collections">
+                                            <div class="megamenu--collections flex gap-10 justify-between">
                                                 {%- if blockItem.size > 0 -%}
                                                     {% for block in blockItem %}
-                                                        <h1>{{ block.megamenu_title }}</h1>
-                                                    {% endfor %}
-                                                {%- endif -%}
+                                                        <div class="relative">
+                                                            {% if block.megamenu_collection %}
+                                                                <a href="{{ block.megamenu_collection.url }}" class="absolute top-0 left-0 right-0 botto"></a>
+                                                            {% endif %}
+                                                            {% if block.megamenu_img %}
+                                                                <div>
+                                                                    {% render 'component-image', image: block.megamenu_img %}
+                                                                </div>
+                                                                {% else %}
+                                                                <div>
+                                                                    {% render 'component-image', image: block.megamenu_collection.featured_image %}
+                                                                </div>
+                                                            {% endif %}
+                                                            <p>{{ block.megamenu_collection.title }}</p>
+                                                        </div>
+                                                        {% endfor %}
+                                                    {%- endif -%}
                                             </div>
                                         </li>
                                     </ul>

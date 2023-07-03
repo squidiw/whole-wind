@@ -7,7 +7,28 @@
           "type": "megamenu",
           "settings": {
             "megamenu_title": "home",
-            "megamenu_collection": ""
+            "megamenu_collection": "apparel"
+          }
+        },
+        "e1d97683-42cb-4102-a121-fac26fd4bf19": {
+          "type": "megamenu",
+          "settings": {
+            "megamenu_title": "home",
+            "megamenu_collection": "hydrogen"
+          }
+        },
+        "54052cdf-ed2a-4dcd-9374-ce1b66fe9800": {
+          "type": "megamenu",
+          "settings": {
+            "megamenu_title": "home",
+            "megamenu_collection": "apparel"
+          }
+        },
+        "e36395b2-218f-46a6-9274-ba32d5f434aa": {
+          "type": "megamenu",
+          "settings": {
+            "megamenu_title": "home",
+            "megamenu_collection": "hydrogen"
           }
         },
         "b185616c-a106-47c5-861e-f36ed5d9f057": {
@@ -27,6 +48,9 @@
       },
       "block_order": [
         "f2d8fcd7-42f5-4d5a-bf94-9240689cc14b",
+        "e1d97683-42cb-4102-a121-fac26fd4bf19",
+        "54052cdf-ed2a-4dcd-9374-ce1b66fe9800",
+        "e36395b2-218f-46a6-9274-ba32d5f434aa",
         "b185616c-a106-47c5-861e-f36ed5d9f057",
         "7620fb01-66d0-4db5-b08b-8500af9cf14c"
       ],
