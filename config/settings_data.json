@@ -1,5 +1,93 @@
 {
   "current": {
+    "sections": {
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "text": "TEXT HERE",
+          "info": "<p>Some company name<\/p><p>Something else here<\/p><p>And here too<\/p>",
+          "footer_bg": "#000000"
+        }
+      },
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "blocks": {
+          "f880cfe7-2d53-4d3c-a26d-3f3b666d7e99": {
+            "type": "announcement",
+            "settings": {
+              "announcement": "<p>First announcement bar<\/p>"
+            }
+          },
+          "4f06359e-8fcb-4d72-be8d-0029bca341f5": {
+            "type": "announcement",
+            "settings": {
+              "announcement": "<p>Second announcement bar<\/p>"
+            }
+          },
+          "e11b9767-3986-4d74-ba9b-8bbd7c403a0c": {
+            "type": "announcement",
+            "settings": {
+              "announcement": "<p>Third announcement bar<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "f880cfe7-2d53-4d3c-a26d-3f3b666d7e99",
+          "4f06359e-8fcb-4d72-be8d-0029bca341f5",
+          "e11b9767-3986-4d74-ba9b-8bbd7c403a0c"
+        ],
+        "settings": {
+          "bg_color": "#C5FC81",
+          "text_color": ""
+        }
+      },
+      "header": {
+        "type": "header",
+        "blocks": {
+          "9f562a36-5f04-44b8-9dd0-afb213a0cbfa": {
+            "type": "megamenu",
+            "settings": {
+              "megamenu_title": "home",
+              "megamenu_collection": "apparel"
+            }
+          },
+          "d9bb6eb5-1c42-46f0-a252-82325d056bf5": {
+            "type": "megamenu",
+            "settings": {
+              "megamenu_title": "home",
+              "megamenu_collection": "hydrogen"
+            }
+          },
+          "1a3198d3-37e1-4a72-b1b7-74b1720d6234": {
+            "type": "megamenu",
+            "settings": {
+              "megamenu_title": "home",
+              "megamenu_collection": "apparel"
+            }
+          },
+          "21503c81-eef7-46e0-8290-31c8da7b73e3": {
+            "type": "megamenu",
+            "settings": {
+              "megamenu_title": "home",
+              "megamenu_collection": "hydrogen"
+            }
+          }
+        },
+        "block_order": [
+          "9f562a36-5f04-44b8-9dd0-afb213a0cbfa",
+          "d9bb6eb5-1c42-46f0-a252-82325d056bf5",
+          "1a3198d3-37e1-4a72-b1b7-74b1720d6234",
+          "21503c81-eef7-46e0-8290-31c8da7b73e3"
+        ],
+        "settings": {
+          "menu": "main-menu",
+          "desktop_menu": "main-menu"
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
   },
   "presets": {
     "Default": {

@@ -63,12 +63,15 @@
     %}
   </head>
   <body>
+    {% section 'announcement-bar' %}
+    {% section 'header' %}
     <main
       id="MainContent"
       tabindex="-1">
       {{ content_for_layout }}
     </main>
 
+    {% section 'footer' %}
     <script>
       window.shopUrl = '{{ request.origin }}'
       window.routes = {

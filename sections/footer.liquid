@@ -1,0 +1,58 @@
+<section class="footer pt-16 pb-[60px]" style="background-color: {{ section.settings.footer_bg }}; color:{{ section.settings.footer_color }}">
+    <div class="max-w-screen-2xl lg:mx-auto">
+        <div>
+            <div class="flex flex-col gap-5">
+                {% if section.settings.logo %}
+                    <div>
+                        {% render 'component-image', image: section.settings.logo %}
+                    </div>
+                {% else %}
+                    <p>{{ shop.name }}</p>
+                {% endif %}
+                <div>
+                    {{ section.settings.text }}
+                </div>
+                <div>
+                    {{ section.settings.info }}
+                </div>
+            </div>
+            <div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+    {
+        "name": "Footer",
+        "settings": [
+            {
+                "type":"image_picker",
+                "id":"logo",
+                "label":"Logo"
+            },
+            {
+                "type":"text",
+                "id":"text",
+                "label":"Text"
+            },
+            {
+                "type":"richtext",
+                "id":"info",
+                "label":"Business info here"
+            },
+            {
+                "type":"color",
+                "id":"footer_color",
+                "label":"Footer text color",
+                "default":"#ffffff"
+            },
+            {
+                "type":"color",
+                "id":"footer_bg",
+                "label":"Footer background color",
+                "default":"#000000"
+            }
+        ]
+    }
+{% endschema %}
