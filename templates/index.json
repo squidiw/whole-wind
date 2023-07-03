@@ -1,5 +1,37 @@
 {
   "sections": {
+    "3f70915c-2f12-49e1-866f-8dfd8de4314e": {
+      "type": "announcement-bar",
+      "blocks": {
+        "12e3f97b-d902-43f2-81e8-6c5cffcc8a76": {
+          "type": "announcement",
+          "settings": {
+            "announcement": "<p>First announcement bar<\/p>"
+          }
+        },
+        "21841747-39e8-4aeb-9b20-0b1228f071bd": {
+          "type": "announcement",
+          "settings": {
+            "announcement": "<p>Second announcement bar<\/p>"
+          }
+        },
+        "00d41771-427b-4aca-9b06-e4eefbee4f9d": {
+          "type": "announcement",
+          "settings": {
+            "announcement": "<p>Third announcement bar<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "12e3f97b-d902-43f2-81e8-6c5cffcc8a76",
+        "21841747-39e8-4aeb-9b20-0b1228f071bd",
+        "00d41771-427b-4aca-9b06-e4eefbee4f9d"
+      ],
+      "settings": {
+        "bg_color": "#c5fc81",
+        "text_color": ""
+      }
+    },
     "6379fe93-21b4-420b-a0f0-ac0de936436e": {
       "type": "header",
       "blocks": {
@@ -59,39 +91,6 @@
         "desktop_menu": "main-menu"
       }
     },
-    "3f70915c-2f12-49e1-866f-8dfd8de4314e": {
-      "type": "announcement-bar",
-      "disabled": true,
-      "blocks": {
-        "12e3f97b-d902-43f2-81e8-6c5cffcc8a76": {
-          "type": "announcement",
-          "settings": {
-            "announcement": "<p>First announcement bar<\/p>"
-          }
-        },
-        "21841747-39e8-4aeb-9b20-0b1228f071bd": {
-          "type": "announcement",
-          "settings": {
-            "announcement": "<p>Second announcement bar<\/p>"
-          }
-        },
-        "00d41771-427b-4aca-9b06-e4eefbee4f9d": {
-          "type": "announcement",
-          "settings": {
-            "announcement": "<p>Third announcement bar<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "12e3f97b-d902-43f2-81e8-6c5cffcc8a76",
-        "21841747-39e8-4aeb-9b20-0b1228f071bd",
-        "00d41771-427b-4aca-9b06-e4eefbee4f9d"
-      ],
-      "settings": {
-        "bg_color": "#c5fc81",
-        "text_color": ""
-      }
-    },
     "cd2d7b1d-fb8e-460b-99d9-5162a7fd6ad1": {
       "type": "banner",
       "disabled": true,
@@ -112,8 +111,8 @@
     }
   },
   "order": [
-    "6379fe93-21b4-420b-a0f0-ac0de936436e",
     "3f70915c-2f12-49e1-866f-8dfd8de4314e",
+    "6379fe93-21b4-420b-a0f0-ac0de936436e",
     "cd2d7b1d-fb8e-460b-99d9-5162a7fd6ad1",
     "d5703e4a-d22c-48da-a711-a7ea3736b95d"
   ]
