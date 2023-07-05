@@ -18,7 +18,7 @@
                                         <span>{{ link.title }}</span>
                                         <span :class="{ 'rotate-180' : open_dropdown }"> {% render 'icon-chevron-down', class: 'w-4 h-4' %}</span>
                                     </a>
-                                    <ul class="navigation-mobile__dropdown" x-transition x-show="open_dropdown">
+                                    <ul class="navigation-mobile__dropdown" x-cloak x-transition x-show="open_dropdown">
                                         {% for childlink in link.links %}
                                             <li class="navigation-mobile__dropdown__list-item">{{ childlink.title }}</li>
                                         {% endfor %}

@@ -29,6 +29,7 @@ body{
   display:flex;
   flex-direction: column;
   min-height: 100vh;
+  color: white;
 }
 
 main{
@@ -42,14 +43,11 @@ main{
   border-top: 1px solid #C6C6C6;
   padding-top: 11px;
 }
+
 div:empty{
   display: none;
 }
 
-a {
-  color: hsla(var(--color-accent) / 1);
-  text-decoration: none;
-}
 
 h1,
 h2,
@@ -107,6 +105,15 @@ button:focus-visible {
   padding: 0 2rem;
 }
 
-footer {
-  opacity: 0.6;
+footer .mobile-navigation__list-item:nth-last-child(2) {
+  border-top: none;
+  padding-top: 0;
+} 
+
+footer .mobile-navigation__list-item+li{
+  margin-top: 20px;
+}
+
+footer a{
+  color:#ffffff;
 }

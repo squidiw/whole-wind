@@ -6,6 +6,9 @@
         "settings": {
           "text": "TEXT HERE",
           "info": "<p>Some company name<\/p><p>Something else here<\/p><p>And here too<\/p>",
+          "menu": "footer",
+          "desktop_menu": "footer",
+          "footer_color": "#ffffff",
           "footer_bg": "#000000"
         }
       },
@@ -37,7 +40,7 @@
           "e11b9767-3986-4d74-ba9b-8bbd7c403a0c"
         ],
         "settings": {
-          "bg_color": "#C5FC81",
+          "bg_color": "#c5fc81",
           "text_color": ""
         }
       },
