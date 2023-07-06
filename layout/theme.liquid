@@ -9,7 +9,12 @@
     <link rel="canonical" href="{{ canonical_url }}">
 
     {% if settings.favicon != blank %}
-      <link fetchpriority="low" rel="icon" href="{{ settings.favicon | image_url: width: 32, height: 32 }}" sizes="32x32">
+      <link
+        fetchpriority="low"
+        rel="icon"
+        href="{{ settings.favicon | image_url: width: 32, height: 32 }}"
+        sizes="32x32"
+      >
     {% endif %}
 
     <title>{{ page_title }}</title>
@@ -30,29 +35,37 @@
     %}
 
     <script>
-      document.documentElement.className = document.documentElement.className.replace('no-js', 'js')
-      window.addEventListener('load', () => document.documentElement.classList.add('ready'))
+      document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+      window.addEventListener('load', () => document.documentElement.classList.add('ready'));
     </script>
 
     {% comment %} SplideJS {% endcomment %}
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js" integrity="sha256-FZsW7H2V5X9TGinSjjwYJ419Xka27I8XPDmWryGlWtw=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" integrity="sha256-5uKiXEwbaQh9cgd2/5Vp6WmMnsUr3VZZw0a8rKnOKNU=" crossorigin="anonymous"> 
+    <script
+      src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"
+      integrity="sha256-FZsW7H2V5X9TGinSjjwYJ419Xka27I8XPDmWryGlWtw="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+      integrity="sha256-5uKiXEwbaQh9cgd2/5Vp6WmMnsUr3VZZw0a8rKnOKNU="
+      crossorigin="anonymous"
+    >
 
     <!-- shopify/apps -->
     {{ content_for_header }}
 
     {% comment %} LINK TO PRELOAD PRODUCTION ASSETS {% endcomment %}
-      {{ 'base.css' | asset_url | stylesheet_tag: preload: true }}
-      {{ 'tailwind.css' | asset_url | stylesheet_tag: preload: true }}
-      {{ 'index.js' | asset_url | preload_tag: as: 'script' }}
+    {{ 'base.css' | asset_url | stylesheet_tag: preload: true }}
+    {{ 'tailwind.css' | asset_url | stylesheet_tag: preload: true }}
+    {{ 'index.js' | asset_url | preload_tag: as: 'script' }}
     {% comment %} END PRELOAD {% endcomment %}
 
-
     {% comment %} LINK TO PRODUCTION ASSETS  {% endcomment %}
-      {{ 'base.css' | asset_url | stylesheet_tag }}
-      {{ 'tailwind.css' | asset_url | stylesheet_tag }}
-      <script src="{{ 'index.js' | asset_url }}" async ></script>
-    {% comment %} END  {% endcomment %} 
+    {{ 'base.css' | asset_url | stylesheet_tag }}
+    {{ 'tailwind.css' | asset_url | stylesheet_tag }}
+    <script src="{{ 'index.js' | asset_url }}" async></script>
+    {% comment %} END  {% endcomment %}
 
     {% liquid
       # Always add entrypoint below content_for_header
@@ -67,21 +80,22 @@
     {% section 'header' %}
     <main
       id="MainContent"
-      tabindex="-1">
+      tabindex="-1"
+    >
       {{ content_for_layout }}
     </main>
 
     {% section 'footer' %}
     <script>
-      window.shopUrl = '{{ request.origin }}'
+      window.shopUrl = '{{ request.origin }}';
       window.routes = {
         cart_add_url: '{{ routes.cart_add_url }}',
         cart_change_url: '{{ routes.cart_change_url }}',
         cart_update_url: '{{ routes.cart_update_url }}',
         cart_url: '{{ routes.cart_url }}',
         predictive_search_url: '{{ routes.predictive_search_url }}',
-        product_recommendations_url: '{{ routes.product_recommendations_url }}'
-      }
+        product_recommendations_url: '{{ routes.product_recommendations_url }}',
+      };
     </script>
   </body>
 </html>

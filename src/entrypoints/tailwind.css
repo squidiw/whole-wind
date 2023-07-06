@@ -675,8 +675,16 @@ video {
   margin-bottom: 1.5rem;
 }
 
+.mb-9 {
+  margin-bottom: 2.25rem;
+}
+
 .mt-10 {
   margin-top: 2.5rem;
+}
+
+.mt-3 {
+  margin-top: 0.75rem;
 }
 
 .mt-5 {
@@ -687,8 +695,12 @@ video {
   margin-top: 2.25rem;
 }
 
-.mt-3 {
-  margin-top: 0.75rem;
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.ml-auto {
+  margin-left: auto;
 }
 
 .block {
@@ -721,6 +733,10 @@ video {
 
 .contents {
   display: contents;
+}
+
+.\!hidden {
+  display: none !important;
 }
 
 .hidden {
@@ -802,6 +818,10 @@ video {
 
 .max-w-screen-xl {
   max-width: 1200px;
+}
+
+.flex-auto {
+  flex: 1 1 auto;
 }
 
 .flex-shrink {
@@ -893,6 +913,18 @@ video {
 
 .gap-7 {
   gap: 1.75rem;
+}
+
+.gap-16 {
+  gap: 4rem;
+}
+
+.gap-8 {
+  gap: 2rem;
+}
+
+.gap-12 {
+  gap: 3rem;
 }
 
 .rounded-md {
@@ -1149,11 +1181,12 @@ main{
   flex: 1 0 auto;
 }
 
-.mobile-navigation__list-item+li{
+.mobile-navigation__list-item+li,
+.footer-navigation__list-item+li{
   margin-top: 10px;
 }
 
-.mobile-navigation__list-item:nth-last-child(2) {
+.mobile-navigation__list-item:nth-last-child(2){
   border-top: 1px solid #C6C6C6;
   padding-top: 11px;
 }
@@ -1218,17 +1251,39 @@ button:focus-visible {
   padding: 0 2rem;
 }
 
-footer .mobile-navigation__list-item:nth-last-child(2) {
+footer .footer-navigation__list-item:nth-last-child(2) {
   border-top: none;
   padding-top: 0;
 }
 
-footer .mobile-navigation__list-item+li{
+footer .footer-navigation__list-item+li{
   margin-top: 20px;
 }
 
 footer a{
   color:#ffffff;
+}
+
+@media screen and (max-width:599px) {
+  footer .mobile-nav{
+    display:flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  footer .desktop-nav{
+    display:none;
+  }
+}
+
+@media screen and (min-width:600px) {
+  footer .mobile-nav{
+    display: none;
+  }
+
+  footer .desktop-nav{
+    display:flex;
+  }
 }
 
 .group:hover .group-hover\:visible {
@@ -1289,11 +1344,6 @@ footer a{
     display: none;
   }
 
-  .lg\:px-0 {
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-
   .lg\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem;
@@ -1305,7 +1355,42 @@ footer a{
   }
 }
 
+@media (min-width: 1080px) {
+  .\31 080\:flex {
+    display: flex;
+  }
+
+  .\31 080\:w-1\/5 {
+    width: 20%;
+  }
+
+  .\31 080\:w-auto {
+    width: auto;
+  }
+
+  .\31 080\:flex-auto {
+    flex: 1 1 auto;
+  }
+
+  .\31 080\:gap-8 {
+    gap: 2rem;
+  }
+
+  .\31 080\:gap-10 {
+    gap: 2.5rem;
+  }
+}
+
 @media (min-width: 1200px) {
+  .xl\:gap-16 {
+    gap: 4rem;
+  }
+
+  .xl\:px-0 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
   .xl\:py-5 {
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
