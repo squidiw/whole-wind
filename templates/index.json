@@ -12,7 +12,6 @@
     },
     "d5703e4a-d22c-48da-a711-a7ea3736b95d": {
       "type": "featured-collection",
-      "disabled": true,
       "settings": {
         "title": "featured collection",
         "collection": "apparel"

@@ -55,25 +55,25 @@
     <!-- shopify/apps -->
     {{ content_for_header }}
 
+    {% liquid
+      # Always add entrypoint below content_for_header
+      # This snippet is necessary for local development
+      render 'adastra' with 'tailwind.css'
+      render 'adastra' with 'base.css'
+      render 'adastra' with 'index.js'
+    %}
+
     {% comment %} LINK TO PRELOAD PRODUCTION ASSETS {% endcomment %}
-    {{ 'base.css' | asset_url | stylesheet_tag: preload: true }}
     {{ 'tailwind.css' | asset_url | stylesheet_tag: preload: true }}
+    {{ 'base.css' | asset_url | stylesheet_tag: preload: true }}
     {{ 'index.js' | asset_url | preload_tag: as: 'script' }}
     {% comment %} END PRELOAD {% endcomment %}
 
     {% comment %} LINK TO PRODUCTION ASSETS  {% endcomment %}
-    {{ 'base.css' | asset_url | stylesheet_tag }}
     {{ 'tailwind.css' | asset_url | stylesheet_tag }}
+    {{ 'base.css' | asset_url | stylesheet_tag }}
     <script src="{{ 'index.js' | asset_url }}" async></script>
     {% comment %} END  {% endcomment %}
-
-    {% liquid
-      # Always add entrypoint below content_for_header
-      # This snippet is necessary for local development
-      render 'adastra' with 'base.css'
-      render 'adastra' with 'tailwind.css'
-      render 'adastra' with 'index.js'
-    %}
   </head>
   <body>
     {% section 'announcement-bar' %}

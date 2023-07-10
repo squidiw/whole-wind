@@ -1,0 +1,20 @@
+{% unless x_data_name %}
+  {% assign x_data_name = 'selectedVariant' %}
+{% endunless %}
+<div class="option-{{ option.name | downcase }} inline-block mr-1">
+  <input
+    class="hidden peer"
+    @change="{{ x_data_name }} = product.variants.find(v => _arrayEquals(v.options, ['{{ value }}']))"
+    value="{{ value }}"
+    name="{{ random_number }}{{ product.id }}-{{ optionIndex }}"
+    :checked="{{ x_data_name }}.options.includes('{{ value }}')"
+    id="{{ random_number }}{{ product.id }}{{ option.name | handleize }}{{ value | handleize }}"
+    type="radio"
+  >
+  <label
+    class="block peer-checked:bg-pink-20 border border-black cursor-pointer bg-white text-lg text-black py-1 px-2"
+    for="{{ random_number }}{{ product.id }}{{ option.name | handleize }}{{ value | handleize }}"
+  >
+    {{- value -}}
+  </label>
+</div>
