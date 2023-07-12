@@ -28,87 +28,20 @@
     </div>
     <div class="w-full mb-10 xl:w-1/2">
       {% form 'product', product %}
-        <div class="block xl:hidden">
-          <div class="splide mob-product-imgs">
-            <div class="splide__track">
-              <div class="splide__list">
-                {% for variant in product.variants %}
-                  <div class="w-full splide__slide">
-                    {% for media in product.media %}
-                      {% case media.media_type %}
-                        {% when 'image' %}
-                          {% render 'component-image', image: media %}
-                        {% else %}
-                          {{ media | media_tag }}
-                      {% endcase %}
-                    {% endfor %}
-                  </div>
-                {% endfor %}
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="border border-b-black">
-          <h1>
-            <span>{{ product.title }}</span>
-            <a href="{{ product.collections }}"></a>
-          </h1>
-          <span class="block">{{ product.price | money_without_trailing_zeros }}</span>
-        </div>
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
 
         {% unless product.has_only_default_variant %}
-          {% for option in product.options_with_values %}
-            <div class="flex items-center gap-2">
-              <label for="{{ option.name }}"> {{ option.name }} : </label>
-              {% if option.name == 'Color' %}
-                {% for value in option.values %}
-                  <span
-                    @click="() => console.log($event.target.dataset.value)"
-                    class="inline-block h-4 w-4 cursor-pointer"
-                    style="background: {{ value | handleize }};"
-                    data-value="{{ value }}"
-                  >
-                  </span>
-                {% endfor %}
-              {% else %}
-                {% for value in option.values %}
-                  <span class="inline-block border p-2 bg-white text-black cursor-pointer">{{ value }}</span>
-                {% endfor %}
-              {% endif %}
-            </div>
-
-            {% comment %}
-              {% for value in option.values %}
-                {% if option.name == 'Color' %}
-                  {% render 'component-color-swatch',
-                    option: option,
-                    value: value,
-                    product: product,
-                    x_data_name: 'selectedVariant',
-                    variant: variant
-                  %}
-                {% else %}
-                  {% unless value == 'Default Title' %}
-                    {% render 'component-swatch',
-                      option: option,
-                      value: value,
-                      product: product,
-                      x_data_name: 'selectedVariant',
-                      variant: variant
-                    %}
-                  {% endunless %}
-                {% endif %}
-              {% endfor %}
-            {% endcomment %}
-          {% endfor %}
+          <select name="id" id="">
+            {% for variant in product.variants %}
+              <option value="{{ variant.id }}">{{ variant.title }}</option>
+            {% endfor %}
+          </select>
         {% endunless %}
-        <input
-          type="hidden"
-          name="id"
-          value="{{ product.selected_or_first_available_variant.id }}"
-          class="product-variant-id"
-        >
-        <button type="submit" class="btn bg-gray-600 text-white">add to cart</button>
+        <div class="product-option">
+          <label for="quantity">Quantity</label>
+          <input id="quantity" name="quantity" value="1" class>
+        </div>
+        <button type="submit">add to cart</button>
       {% endform %}
     </div>
   </div>
