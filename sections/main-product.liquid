@@ -31,12 +31,27 @@
         <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
 
         {% unless product.has_only_default_variant %}
-          <select name="id" id="">
-            {% for variant in product.variants %}
-              <option value="{{ variant.id }}">{{ variant.title }}</option>
-            {% endfor %}
-          </select>
+          {% for option in product.options_with_values %}
+            <fieldset>
+              <legend>{{ option.name }}</legend>
+              {% for value in option.values %}
+                <div>
+                  <input
+                    {% if option.selected_value == value %}
+                      checked
+                    {% endif %}
+                    type="radio"
+                    name="{{ option.name }}"
+                    value="{{ value }}"
+                    id="{{ option.name | handleize }}-{{ value | handleize }}"
+                  >
+                  <label for="{{ option.name | handleize }}-{{ value | handleize }}">{{ value }}</label>
+                </div>
+              {% endfor %}
+            </fieldset>
+          {% endfor %}
         {% endunless %}
+
         <div class="product-option">
           <label for="quantity">Quantity</label>
           <input id="quantity" name="quantity" value="1" class>
